@@ -2,9 +2,18 @@ package main
 
 import (
 	"fmt"
+	"runtime/debug"
 )
 
 func main() {
+
+	//funcao1()
+	//pilha1()
+	x, y := retornoNomeado(1, 2)
+	fmt.Println(x, y)
+}
+
+func funcao1() {
 	f1()
 	f2("", "")
 
@@ -47,4 +56,19 @@ func f3(p1 string) string {
 
 func f5(p1, p2 string) (string, string) {
 	return p1, p2
+}
+
+func pilha1() { p1() }
+func p1()     { p2() }
+func p2()     { p3() }
+func p3()     { p4() }
+func p4() {
+	debug.PrintStack()
+}
+
+func retornoNomeado(p1, p2 int) (segundo, primeiro int) {
+	segundo = p2
+	primeiro = p1
+	return //returno limpo
+
 }
