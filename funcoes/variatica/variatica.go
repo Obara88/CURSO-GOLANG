@@ -13,9 +13,11 @@ func variatica1() {
 	fmt.Println("media", media(12, 3.21, 31.3, 123.21, 3.0, 1.3, 1.23, 213.0, 23.0))
 }
 
+//recebo n parametos
 func media(numeros ...float64) float64 {
 	total := 0.0
 
+	//leio como se fosse um array
 	for _, num := range numeros {
 		total += num
 	}
@@ -29,7 +31,7 @@ func variaticaSlice() {
 	// aprovados := [...]string{"Joao", "Paulo", "Ana"} //isso é um array
 
 	//quando vc faz isso "aprovados..." ele quebra em varias string
-	imprimirAprovados(aprovados...)
+	imprimirAprovados(aprovados...) //passa o parametro com o "..."
 
 }
 
